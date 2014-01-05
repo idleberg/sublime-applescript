@@ -30,7 +30,7 @@ Many commands can simply be triggered by completing a standard AppleScript comma
 
 There are several snippets included to generate license-texts enclosed in a comment. To trigger these, try the `comment` command with license names as parameter. You could, for example, use `comment:mit` to add an *MIT License* text, or `comment:gpl2` for the *GNU General Public License* in version 2.0
 
-When working with either, completions or snippets, you may use the `Tab` key to jump between input-fields.
+When working with either, completions or snippets, you may use the `⇤Tab⇥` key to jump between input-fields.
 
 ## License
 
