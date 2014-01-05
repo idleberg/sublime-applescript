@@ -24,11 +24,11 @@
 
 ### Completions
 
-Commands such as `try`, `if`, `repeat`, or `set` will be created code section. Use the tab-key to jump between fields. In most cases, typing many AppleScript commands will come with a completion.
+Commands such as `try`, `if`, `repeat`, or `set` will be created code section. Use the `Tab` key to jump between inputs. In most cases, typing many AppleScript commands will come with a completion.
 
 ### Snippets
 
-There are several snippets included to generate license-texts enclosed in a comment. To trigger these, try the `comment` command with license names as parameter. You could, for example, use `comment:mit` to add an MIT License text, or `comment:gpl2` for the GNU General Public License in version 2.0
+There are several snippets included to generate license-texts enclosed in a comment. To trigger these, try the `comment` command with license names as parameter. You could, for example, use `comment:mit` to add an MIT License text, or `comment:gpl2` for the GNU General Public License in version 2.0. Use the `Tab` key to jump between inputs.
 
 ## License
 
