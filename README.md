@@ -24,7 +24,7 @@
 
 ### Completions
 
-Commands such as `try`, `if`, `repeat`, or `set` will be created code section. Use the `Tab` key to jump between inputs. In most cases, typing many AppleScript commands will come with a completion.
+Many commands can simply be triggered by completing a standard AppleScript command. Commands such as `try`, `if`, `repeat`, or `set` will create a code block. Use the `Tab` key to jump between inputs.
 
 ### Snippets
 
