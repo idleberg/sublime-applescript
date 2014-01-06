@@ -57,7 +57,7 @@
                 { "trigger": "error: File reference number error (-51)", "contents": "error number -51" },
                 { "trigger": "error: Folder <name> wasn’t found (-120)", "contents": "error number -120" },
                 { "trigger": "error: Internal table overflow (-2707)", "contents": "error number -2707" },
-                { "trigger": "error: Invalid date and time (-30720)", "contents": "error number -30720" },
+                { "trigger": "error: Invalid date and time <date string> (-30720)", "contents": "error number -30720" },
                 { "trigger": "error: Message size too large for the 7.0 Finder (-2729)", "contents": "error number -2729" },
                 { "trigger": "error: More memory needed than is specified in the size resource (-605)", "contents": "error number -605" },
                 { "trigger": "error: No error (0)", "contents": "error number 0" },
