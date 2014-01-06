@@ -2,6 +2,10 @@
 
 [AppleScript](https://developer.apple.com/library/mac/documentation/applescript/conceptual/applescriptlangguide/introduction/ASLR_intro.html) completions and snippets for [Sublime Text](http://www.sublimetext.com/)
 
+![Screenshot](https://raw.github.com/idleberg/AppleScript-Sublime-Text/master/screenshot.gif)
+
+*Screenshot of AppleScript in Sublime Text with [Paraíso theme](https://github.com/idleberg/Paraiso.tmTheme)*
+
 ## Installation
 
 ### Package Control
