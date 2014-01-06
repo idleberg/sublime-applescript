@@ -85,7 +85,7 @@
                 { "trigger": "if then..else if..else", "contents": "if ${1:condition} then\n\t${2:--your code}\nelse if ${3:else_condition} then\n\t${4:--your code}\nelse\n\t${5:--your code}\nend if" },
                 { "trigger": "if then..else", "contents": "if ${1:condition} then\n\t${2:--your code}\nelse\n\t${3:--your code}\nend if" },
                 { "trigger": "if", "contents": "if ${1:condition}\n\t${2:--your code}\nend if" },
-                { "trigger": "if..else if", "contents": "if ${1:condition}\n\t${2:--your code}\nelse  if${3:else_condition}\n\t${4:--your code}\nend if" },
+                { "trigger": "if..else if", "contents": "if ${1:condition}\n\t${2:--your code}\nelse if ${3:else_condition}\n\t${4:--your code}\nend if" },
                 { "trigger": "if..else if..else", "contents": "if ${1:condition}\n\t${2:--your code}\nelse if ${3:else_condition}\n\t${4:--your code}\nelse\n\t${5:--your code}\nend if" },
                 { "trigger": "if..else", "contents": "if ${1:condition}\n\t${2:--your code}\nelse\n\t${3:--your code}\nend if" },
                 { "trigger": "if..exit repeat", "contents": "if ${1:condition} then exit repeat" },
