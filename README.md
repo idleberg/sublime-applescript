@@ -4,7 +4,7 @@
 
 ![Screenshot](https://raw.github.com/idleberg/AppleScript-Sublime-Text/master/screenshot.gif)
 
-*Screenshot of AppleScript in Sublime Text with [Paraíso theme](https://github.com/idleberg/Paraiso.tmTheme)*
+*Screenshot of AppleScript in Sublime Text with [Paraíso theme](https://github.com/idleberg/Paraiso.tmTheme) (also: invalid code!)*
 
 ## Installation
 
