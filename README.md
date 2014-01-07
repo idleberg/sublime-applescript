@@ -24,7 +24,7 @@
 1. Download the files using the GitHub .zip download option
 2. Unzip the files to your Sublime Text `Packages/User` directory
 
-## Instructions
+## Usage
 
 ### Completions
 
