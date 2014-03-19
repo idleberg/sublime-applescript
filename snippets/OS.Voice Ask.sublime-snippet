@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+--via http://macscripter.net/viewtopic.php?id=24662
+tell application "SpeechRecognitionServer"
+    set theResponse to listen for {"${1:yes}", "${2:no}"} with prompt "${3:Can I ask you something}?"
+    
+    if theResponse is "${1}" then
+   		${4:--your code}
+    else if theResponse is "${2}" then
+        ${5:--your code}
+    end if
+end tell
+]]></content>
+	<tabTrigger>OS:Voice Question</tabTrigger>
+	<scope>source.applescript</scope>
+</snippet>

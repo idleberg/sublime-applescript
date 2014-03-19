@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+tell application "System Preferences"
+	activate
+	set the current pane to pane id "com.apple.preference.keyboard"
+end tell
+]]></content>
+	<tabTrigger>System Preferences:Keyboard</tabTrigger>
+	<scope>source.applescript</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+tell application "iTunes"
+	open location "${1:http}://${2:url}${3::${4:port}}"
+end tell
+]]></content>
+	<tabTrigger>iTunes:Stream URL</tabTrigger>
+	<scope>source.applescript</scope>
+</snippet>

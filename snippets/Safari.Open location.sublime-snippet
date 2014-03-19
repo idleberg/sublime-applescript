@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+tell application "Safari"
+    open location "${1:http}://${2:url}"
+    activate
+end tell
+]]></content>
+	<tabTrigger>Safari:Open location</tabTrigger>
+	<scope>source.applescript</scope>
+</snippet>

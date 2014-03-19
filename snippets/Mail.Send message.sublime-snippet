@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+--via http://www.hackmac.org/forum/topic/341-send-email-using-applescript/
+set toName to "${1:John Appleseed}"
+set toAddress to "${2:name}@${3:address}"
+set theSubject to "${4:(empty subject)}"
+set theContent to "${5:(empty message)}"
+ 
+tell application "Mail"
+        set theEmail to make new outgoing message with properties {subject:theSubject, content:theContent, visible:true}
+ 
+        tell theEmail
+                make new to recipient with properties {name:toName, address:toAddress}
+                send
+        end tell
+end tell
+]]></content>
+	<tabTrigger>Mail:Send message</tabTrigger>
+	<scope>source.applescript</scope>
+</snippet>

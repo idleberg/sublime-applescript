@@ -34,6 +34,15 @@ Many commands can simply be triggered by completing a standard AppleScript comma
 
 There are several snippets included to generate license-texts enclosed in a comment. To trigger these, try the `comment` command with license names as parameter. You could, for example, use `comment:mit` to add an *MIT License* text, or `comment:gpl2` for the *GNU General Public License* in version 2.0. Use the `Tab` key to jump between input-fields.
 
+You can directly address several Mac OS X applications to have them perform some action. For instance you can scaffold a script using `Mail:Send message`, telling Mail to send a message. You can use the `Tab` key to jump between recipient, subject and message fields. Other examples would be `System Preferences:Security` to open the according panel in System Preferences, or `iTunes:Open file` to play a piece of music in iTunes.
+
+More examples:
+
+* `Calendar:Add event`
+* `Finder:Open location`
+* `OS:Notification Message`
+* `Safari:Open location`
+
 ### Build System
 
 A build system is available on Mac OS X and should be available by default. To run your script press `Ctrl+B` or build from the *Tools* menu.

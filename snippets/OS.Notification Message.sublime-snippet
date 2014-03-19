@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+--via http://macscripter.net/viewtopic.php?id=24662
+display notification with title "${1:text}" subtitle "${2:text}"
+${3:delay ${4:1}}
+
+${5:on error errorMessage number errorNumber
+		display alert errorNumber message errorMessage}
+]]></content>
+	<tabTrigger>OS:Notification Message</tabTrigger>
+	<scope>source.applescript</scope>
+</snippet>

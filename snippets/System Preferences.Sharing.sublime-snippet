@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+tell application "System Preferences"
+	activate
+	set the current pane to pane id "com.apple.preferences.sharing"
+end tell
+]]></content>
+	<tabTrigger>System Preferences:Sharing</tabTrigger>
+	<scope>source.applescript</scope>
+</snippet>

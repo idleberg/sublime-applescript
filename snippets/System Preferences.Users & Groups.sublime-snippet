@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+tell application "System Preferences"
+	activate
+	set the current pane to pane id "com.apple.preferences.users"
+end tell
+]]></content>
+	<tabTrigger>System Preferences:Users &amp; Groups</tabTrigger>
+	<scope>source.applescript</scope>
+</snippet>
