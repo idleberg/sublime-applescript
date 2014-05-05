@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/idleberg/AppleScript-Sublime-Text.png)](http://travis-ci.org/idleberg/AppleScript-Sublime-Text)
+
 # AppleScript for Sublime Text
 
 [AppleScript](https://developer.apple.com/library/mac/documentation/applescript/conceptual/applescriptlangguide/introduction/ASLR_intro.html) completions, snippets and build tools for [Sublime Text](http://www.sublimetext.com/). Work in progress!
