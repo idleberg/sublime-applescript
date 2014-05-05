@@ -1,12 +1,9 @@
-/**
- *
+ /*
  * sublimetext-gruntfile.js
- * ========================
- *
- * A simple Gruntfile to validate Sublime Text files
- *
  * https://github.com/idleberg/sublimetext-gruntfile.js
  *
+ * Copyright (c) 2014 Jan T. Sott
+ * Licensed under the MIT license.
  */
  
  module.exports = function(grunt) {
