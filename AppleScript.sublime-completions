@@ -3,7 +3,7 @@
 
         "completions":
         [
-                // Basic commands
+                { "#": "Basic commands" },
                 { "trigger": "activate application", "contents": "activate application \"${1:application_name}\"" },
                 { "trigger": "activate", "contents": "activate" },
                 { "trigger": "administrator priviledges", "contents": "administrator priviledges" },
@@ -188,7 +188,7 @@
                 { "trigger": "write permission", "contents": "write permission ${1:boolean}" },
                 { "trigger": "write", "contents": "write \"${1:string}\" to ${2:file}" },
 
-                // Special Commands
+                { "#": "Special Commands" },
                 { "trigger": "activate:Activity Monitor", "contents": "activate application \"Activity Monitor\"" },
                 { "trigger": "activate:AirPort Utility", "contents": "activate application \"AirPort Utility\"" },
                 { "trigger": "activate:App Store", "contents": "activate application \"App Store\"" },
@@ -494,6 +494,6 @@
                 { "trigger": "tell:VoiceOver Utility", "contents": "tell application \"VoiceOver Utility\"\n\t${2:--your code}\nend tell" },
                 { "trigger": "tell:Xcode", "contents": "tell application \"Xcode\"\n\t${2:--your code}\nend tell" },
                 
-                { /* It ain't over 'til the fat lady sings */ }
+                { "note": "It ain't over 'til the fat lady sings" }
         ]
 }
