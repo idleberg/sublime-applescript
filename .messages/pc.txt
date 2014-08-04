@@ -1,0 +1,3 @@
+Apologies to everyone who wondered why this package didn't work when installing
+via Package Control. Should you have forgotten you once installed this package,
+please give it another try since the issue should be resolved!

@@ -43,8 +43,6 @@ More examples:
 * `OS:Notification Message`
 * `Safari:Open location`
 
-Please note that these snippets are case sensitive.
-
 ### Build System
 
 A build system works on Mac OS X only and should be available by default. To run your script press `⌘+B` or build from the *Tools* menu.
