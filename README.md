@@ -1,4 +1,7 @@
-# AppleScript Extensionsfor Sublime Text [![Build Status](https://secure.travis-ci.org/idleberg/AppleScript-Sublime-Text.svg)](http://travis-ci.org/idleberg/AppleScript-Sublime-Text)
+# AppleScript Extensions for Sublime Text
+
+[![GitHub tag](https://img.shields.io/github/tag/idleberg/AppleScript-Sublime-Text.svg?style=flat-square)](https://github.com/idleberg/AppleScript-Sublime-Text/tags)b
+[![Travis](https://img.shields.io/travis/idleberg/AppleScript-Sublime-Text.svg?style=flat-square)](https://travis-ci.org/idleberg/AppleScript-Sublime-Text)
 
 This [Sublime Text](http://www.sublimetext.com/) package adds completions, snippets and build tools for [AppleScript](https://developer.apple.com/library/mac/documentation/applescript/conceptual/applescriptlangguide/introduction/ASLR_intro.html).
 
