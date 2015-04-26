@@ -24,6 +24,6 @@
     THE SOFTWARE.
 *)
 ]]></content>
-	<tabTrigger>comment:mit</tabTrigger>
+	<tabTrigger>mit</tabTrigger>
 	<scope>source.applescript</scope>
 </snippet>
