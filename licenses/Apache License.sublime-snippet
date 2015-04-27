@@ -16,6 +16,6 @@
     limitations under the License.
 *)
 ]]></content>
-	<tabTrigger>apache</tabTrigger>
+	<tabTrigger>comment:apache</tabTrigger>
 	<scope>source.applescript</scope>
 </snippet>

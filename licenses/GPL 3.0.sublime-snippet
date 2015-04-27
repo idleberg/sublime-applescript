@@ -17,6 +17,6 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 ]]></content>
-	<tabTrigger>gpl3</tabTrigger>
+	<tabTrigger>comment:gpl3</tabTrigger>
 	<scope>source.applescript</scope>
 </snippet>

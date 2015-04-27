@@ -16,6 +16,6 @@
     3. This notice may not be removed or altered from any source distribution.
 *)
 ]]></content>
-	<tabTrigger>zlib</tabTrigger>
+	<tabTrigger>comment:zlib</tabTrigger>
 	<scope>source.applescript</scope>
 </snippet>
