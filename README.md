@@ -1,5 +1,6 @@
 # AppleScript Extensions for Sublime Text
 
+[![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 [![GitHub tag](https://img.shields.io/github/tag/idleberg/AppleScript-Sublime-Text.svg?style=flat-square)](https://github.com/idleberg/AppleScript-Sublime-Text/tags)
 [![Travis](https://img.shields.io/travis/idleberg/AppleScript-Sublime-Text.svg?style=flat-square)](https://travis-ci.org/idleberg/AppleScript-Sublime-Text)
 
