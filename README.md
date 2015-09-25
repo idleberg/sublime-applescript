@@ -15,7 +15,7 @@ This [Sublime Text](http://www.sublimetext.com/) package adds completions, snipp
 
 ### Package Control
 
-1. Make sure you already have [Package Control](http://wbond.net/sublime_packages/package_control/) installed
+1. Make sure you already have [Package Control](https://packagecontrol.io/) installed
 2. Choose “*Install Package*” from the Command Palette (<kbd>Super</kbd>+<kbd>Shift</kbd>+<kbd>p</kbd>)
 3. Select “*AppleScript Extensions*”” and press <kbd>Enter</kbd>
 
