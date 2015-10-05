@@ -50,7 +50,7 @@ More examples:
 
 ### Build System
 
-A build system works on Mac OS X only and should be available by default. To run your script press `⌘+B` or build from the *Tools* menu.
+A build system works on Mac OS X only and should be available by default. To run your script press <kbd>⌘</kbd>+<kbd>B</kbd> or build from the *Tools* menu.
 
 ## License
 
