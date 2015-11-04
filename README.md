@@ -33,13 +33,13 @@ This [Sublime Text](http://www.sublimetext.com/) package adds completions, snipp
 
 ### Completions
 
-Many commands can simply be triggered by completing a standard AppleScript command. Commands such as `try`, `if`, `repeat`, or `set` will create a code block. Use the `Tab` key to jump between input-fields.
+Many commands can simply be triggered by completing a standard AppleScript command. Commands such as `try`, `if`, `repeat`, or `set` will create a code block. Press <kbd>Tab</kbd> to jump between input-fields.
 
 ### Snippets
 
-There are several snippets included to generate license-texts enclosed in a comment. To trigger these, try the `comment` command with license names as parameter. You could, for example, use `comment:mit` to add an *MIT License* text, or `comment:gpl2` for the *GNU General Public License* in version 2.0. Use the `Tab` key to jump between input-fields.
+There are several snippets included to generate license-texts enclosed in a comment. To trigger these, try the `comment` command with license names as parameter. You could, for example, use `comment:mit` to add an *MIT License* text, or `comment:gpl2` for the *GNU General Public License* in version 2.0. Press <kbd>Tab</kbd> to jump between input-fields.
 
-You can directly address several Mac OS X applications to have them perform some action. For instance you can scaffold a script using `Mail:Send message`, telling Mail to send a message. You can use the `Tab` key to jump between recipient, subject and message fields. Other examples would be `System Preferences:Security` to open the according panel in System Preferences, or `iTunes:Open file` to play a piece of music in iTunes.
+You can directly address several Mac OS X applications to have them perform some action. For instance you can scaffold a script using `Mail:Send message`, telling Mail to send a message. You can use <kbd>Tab</kbd> to jump between recipient, subject and message fields. Other examples would be `System Preferences:Security` to open the according panel in System Preferences, or `iTunes:Open file` to play a piece of music in iTunes.
 
 More examples:
 
@@ -51,7 +51,7 @@ More examples:
 
 ### Build System
 
-A build system works on Mac OS X only and should be available by default. To run your script press <kbd>⌘</kbd>+<kbd>B</kbd> or build from the *Tools* menu.
+A build system is available on Mac OS X and should work once installed. To run your script press <kbd>⌘</kbd>+<kbd>B</kbd> or choose “Build” from the *Tools* menu.
 
 ## License
 
