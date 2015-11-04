@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+tell application "Terminal"
+    set h to "${1:value}"
+    do shell script "${1:script} " &
+end tell
+]]></content>
+	<tabTrigger>Terminal:Pass variable to script</tabTrigger>
+	<scope>source.applescript</scope>
+</snippet>

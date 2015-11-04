@@ -47,6 +47,7 @@ More examples:
 * `Finder:Open location`
 * `OS:Notification Message`
 * `Safari:Open location`
+* `Terminal:Run shell script`
 
 ### Build System
 

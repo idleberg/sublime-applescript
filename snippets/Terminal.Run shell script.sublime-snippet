@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+tell application "Terminal"
+    do shell script "${1:script}"
+end tell
+]]></content>
+	<tabTrigger>Terminal:Run shell script</tabTrigger>
+	<scope>source.applescript</scope>
+</snippet>
