@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+--via http://www.davidbaumgold.com/tutorials/wine-mac/#part-1
+tell application "Terminal"
+    do script "${1:/usr/local/bin/wine} ~/.wine/drive_c/Program\\ Files/${2:directory}/${3:file}.exe"
+end tell
+]]></content>
+	<tabTrigger>Terminal:Wine shortcut</tabTrigger>
+	<scope>source.applescript</scope>
+</snippet>
