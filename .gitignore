@@ -1,2 +1,4 @@
+*.applescript
+*.scpt
 node_modules/
 npm-debug.log
