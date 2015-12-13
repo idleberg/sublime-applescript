@@ -1,5 +1,0 @@
-{
- "cmd": ["/usr/bin/osacompile", "-o", "${file/\\.applescript/\\.scpt/}", "$file" ],
- "working_dir": "${project_path:${folder}}",
- "selector": "source.applescript"
-}

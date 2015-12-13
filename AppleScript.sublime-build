@@ -1,0 +1,11 @@
+{
+ "selector": "source.applescript",
+ "working_dir": "${project_path:${folder}}",
+ "cmd": ["/usr/bin/osacompile", "-o", "${file/\\.applescript/\\.scpt/}", "$file" ],
+ "variants": [
+    {
+        "name": "Run the script",
+        "cmd": ["/usr/bin/osascript", "$file" ]
+    }
+ ]
+}
