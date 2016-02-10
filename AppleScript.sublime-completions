@@ -6,7 +6,7 @@
                 { "#": "Basic commands" },
                 { "trigger": "activate application", "contents": "activate application \"${1:application_name}\"" },
                 { "trigger": "activate", "contents": "activate" },
-                { "trigger": "administrator priviledges", "contents": "administrator priviledges" },
+                { "trigger": "administrator privileges", "contents": "administrator privileges" },
                 { "trigger": "as string", "contents": "as string" },
                 { "trigger": "as user name", "contents": "as user name \"${1:user}\"" },
                 { "trigger": "as user name..password", "contents": "as user name \"${1:user}\" with password \"${2:password}\"" },
@@ -491,7 +491,7 @@
                 { "trigger": "tell:Time Machine", "contents": "tell application \"Time Machine\"\n\t${2:--your code}\nend tell" },
                 { "trigger": "tell:VoiceOver Utility", "contents": "tell application \"VoiceOver Utility\"\n\t${2:--your code}\nend tell" },
                 { "trigger": "tell:Xcode", "contents": "tell application \"Xcode\"\n\t${2:--your code}\nend tell" },
-                
+
                 { "note": "It ain't over 'til the fat lady sings" }
         ]
 }
