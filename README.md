@@ -2,12 +2,12 @@
 
 [![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 [![Package Control](https://packagecontrol.herokuapp.com/downloads/AppleScript%20Extensions.svg?style=flat-square)](https://packagecontrol.io/packages/AppleScript%20Extensions)
-[![GitHub tag](https://img.shields.io/github/tag/idleberg/AppleScript-Sublime-Text.svg?style=flat-square)](https://github.com/idleberg/AppleScript-Sublime-Text/tags)
-[![Travis](https://img.shields.io/travis/idleberg/AppleScript-Sublime-Text.svg?style=flat-square)](https://travis-ci.org/idleberg/AppleScript-Sublime-Text)
+[![GitHub tag](https://img.shields.io/github/tag/idleberg/sublime-applescript.svg?style=flat-square)](https://github.com/idleberg/sublime-applescript/tags)
+[![Travis](https://img.shields.io/travis/idleberg/sublime-applescript.svg?style=flat-square)](https://travis-ci.org/idleberg/sublime-applescript)
 
 This [Sublime Text](http://www.sublimetext.com/) package adds completions, snippets and build tools for [AppleScript](https://developer.apple.com/library/mac/documentation/applescript/conceptual/applescriptlangguide/introduction/ASLR_intro.html).
 
-![Screenshot](https://raw.github.com/idleberg/AppleScript-Sublime-Text/master/screenshot.gif)
+![Screenshot](https://raw.github.com/idleberg/sublime-applescript/master/screenshot.gif)
 
 *Screenshot of AppleScript in Sublime Text with [Hopscotch](https://github.com/idleberg/Hopscotch) color scheme*
 
@@ -22,11 +22,11 @@ This [Sublime Text](http://www.sublimetext.com/) package adds completions, snipp
 ### GitHub
 
 1. Change to your Sublime Text `Packages` directory
-2. Clone repository `git clone https://github.com/idleberg/AppleScript-Sublime-Text.git 'AppleScript Extensions'`
+2. Clone repository `git clone https://github.com/idleberg/sublime-applescript.git 'AppleScript Extensions'`
 
 ### Manual installation
 
-1. Download the latest [stable release](https://github.com/idleberg/AppleScript-Sublime-Text/releases)
+1. Download the latest [stable release](https://github.com/idleberg/sublime-applescript/releases)
 2. Unzip the archive to your Sublime Text `Packages` directory
 
 ## Usage
@@ -59,4 +59,4 @@ This work is licensed under the [The MIT License](LICENSE).
 
 ## Donate
 
-You are welcome support this project using [Flattr](https://flattr.com/submit/auto?user_id=idleberg&url=https://github.com/idleberg/AppleScript-Sublime-Text) or Bitcoin `17CXJuPsmhuTzFV2k4RKYwpEHVjskJktRd`
+You are welcome support this project using [Flattr](https://flattr.com/submit/auto?user_id=idleberg&url=https://github.com/idleberg/sublime-applescript) or Bitcoin `17CXJuPsmhuTzFV2k4RKYwpEHVjskJktRd`
