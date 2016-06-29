@@ -39,7 +39,7 @@ Many commands can simply be triggered by completing a standard AppleScript comma
 
 There are several snippets included to generate license-texts enclosed in a comment. To trigger these, try the `comment` command with license names as parameter. You could, for example, use `comment:mit` to add an *MIT License* text, or `comment:gpl2` for the *GNU General Public License* in version 2.0. Press <kbd>Tab</kbd> to jump between input-fields.
 
-You can directly address several Mac OS X applications to have them perform some action. For instance you can scaffold a script using `Mail:Send message`, telling Mail to send a message. You can use <kbd>Tab</kbd> to jump between recipient, subject and message fields. Other examples would be `System Preferences:Security` to open the according panel in System Preferences, or `iTunes:Open file` to play a piece of music in iTunes.
+You can directly address several macOS applications to have them perform some action. For instance you can scaffold a script using `Mail:Send message`, telling Mail to send a message. You can use <kbd>Tab</kbd> to jump between recipient, subject and message fields. Other examples would be `System Preferences:Security` to open the according panel in System Preferences, or `iTunes:Open file` to play a piece of music in iTunes.
 
 More examples:
 
@@ -51,7 +51,7 @@ More examples:
 
 ### Build System
 
-Build systems are available on Mac OS X to compile or run scripts. Use the default shortcut <kbd>⌘</kbd>+<kbd>B</kbd> to build or <kbd>Shift</kbd>+<kbd>⌘</kbd>+<kbd>B</kbd> to select the default build system.
+Build systems are available on macOS to compile or run scripts. Use the default shortcut <kbd>⌘</kbd>+<kbd>B</kbd> to build or <kbd>Shift</kbd>+<kbd>⌘</kbd>+<kbd>B</kbd> to select the default build system.
 
 ## License
 
