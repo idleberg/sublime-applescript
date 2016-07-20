@@ -9,7 +9,9 @@
  module.exports = function(grunt) {
 
     var jsonFiles = [
+        '**/*.JSON-sublime-syntax',
         '**/*.JSON-tmLanguage',
+        '**/*.JSON-tmTheme',
         '**/*.sublime-build',
         '**/*.sublime-commands',
         '**/*.sublime-completions',
@@ -27,11 +29,16 @@
     ];
 
     var ymlFiles = [
-        '**/*.sublime-syntax'
+        '**/*.sublime-syntax',
+        '**/*.YAML-tmLanguage',
+        '**/*.YAML-tmTheme'
     ];
 
     var xmlFiles = [
         '**/*.plist',
+        '**/*.PLIST-sublime-syntax',
+        '**/*.PLIST-tmLanguage',
+        '**/*.PLIST-tmTheme',
         '**/*.sublime-snippet',
         '**/*.tmCommand',
         '**/*.tmLanguage',
