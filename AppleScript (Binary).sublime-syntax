@@ -1,0 +1,10 @@
+%YAML 1.2
+---
+# http://www.sublimetext.com/docs/3/syntax.html
+name: AppleScript (Binary)
+file_extensions:
+  - scpt
+scope: source.applescript.binary
+contexts:
+  main:
+    - include: scope:source.applescript
