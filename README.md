@@ -2,12 +2,12 @@
 
 [![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 [![Package Control](https://packagecontrol.herokuapp.com/downloads/AppleScript%20Extensions.svg?style=flat-square)](https://packagecontrol.io/packages/AppleScript%20Extensions)
-[![GitHub tag](https://img.shields.io/github/tag/idleberg/sublime-applescript.svg?style=flat-square)](https://github.com/idleberg/sublime-applescript/tags)
-[![Travis](https://img.shields.io/travis/idleberg/sublime-applescript.svg?style=flat-square)](https://travis-ci.org/idleberg/sublime-applescript)
+[![GitHub tag](https://img.shields.io/github/tag/idleberg/AppleScript-Sublime-Text.svg?style=flat-square)](https://github.com/idleberg/AppleScript-Sublime-Text/tags)
+[![Travis](https://img.shields.io/travis/idleberg/AppleScript-Sublime-Text.svg?style=flat-square)](https://travis-ci.org/idleberg/AppleScript-Sublime-Text)
 
-This [Sublime Text](http://www.sublimetext.com/) package adds completions, snippets and build tools for [AppleScript](https://developer.apple.com/library/mac/documentation/applescript/conceptual/applescriptlangguide/introduction/ASLR_intro.html).
+This [Sublime Text](http://www.sublimetext.com/) package adds completions, snippets and build tools for [AppleScript](https://developer.apple.com/library/mac/documentation/applescript/conceptual/applescriptlangguide/introduction/ASLR_intro.html). As of version 2.0, this package also lets you edit binary script files.
 
-![Screenshot](https://raw.github.com/idleberg/sublime-applescript/master/screenshot.gif)
+![Screenshot](https://raw.github.com/idleberg/AppleScript-Sublime-Text/master/screenshot.gif)
 
 *Screenshot of AppleScript in Sublime Text with [Hopscotch](https://github.com/idleberg/Hopscotch) color scheme*
 
@@ -16,17 +16,17 @@ This [Sublime Text](http://www.sublimetext.com/) package adds completions, snipp
 ### Package Control
 
 1. Make sure you already have [Package Control](https://packagecontrol.io/) installed
-2. Choose *“Install Package”* from the Command Palette (<kbd>Super</kbd>+<kbd>Shift</kbd>+<kbd>p</kbd>)
+2. Choose “*Install Package*” from the Command Palette (<kbd>Super</kbd>+<kbd>Shift</kbd>+<kbd>p</kbd>)
 3. Select “*AppleScript Extensions*”” and press <kbd>Enter</kbd>
 
 ### GitHub
 
 1. Change to your Sublime Text `Packages` directory
-2. Clone repository `git clone https://github.com/idleberg/sublime-applescript.git 'AppleScript Extensions'`
+2. Clone repository `git clone https://github.com/idleberg/AppleScript-Sublime-Text.git 'AppleScript Extensions'`
 
 ### Manual installation
 
-1. Download the latest [stable release](https://github.com/idleberg/sublime-applescript/releases)
+1. Download the latest [stable release](https://github.com/idleberg/AppleScript-Sublime-Text/releases)
 2. Unzip the archive to your Sublime Text `Packages` directory
 
 ## Usage
@@ -39,7 +39,7 @@ Many commands can simply be triggered by completing a standard AppleScript comma
 
 There are several snippets included to generate license-texts enclosed in a comment. To trigger these, try the `comment` command with license names as parameter. You could, for example, use `comment:mit` to add an *MIT License* text, or `comment:gpl2` for the *GNU General Public License* in version 2.0. Press <kbd>Tab</kbd> to jump between input-fields.
 
-You can directly address several macOS applications to have them perform some action. For instance you can scaffold a script using `Mail:Send message`, telling Mail to send a message. You can use <kbd>Tab</kbd> to jump between recipient, subject and message fields. Other examples would be `System Preferences:Security` to open the according panel in System Preferences, or `iTunes:Open file` to play a piece of music in iTunes.
+You can directly address several Mac OS X applications to have them perform some action. For instance you can scaffold a script using `Mail:Send message`, telling Mail to send a message. You can use <kbd>Tab</kbd> to jump between recipient, subject and message fields. Other examples would be `System Preferences:Security` to open the according panel in System Preferences, or `iTunes:Open file` to play a piece of music in iTunes.
 
 More examples:
 
@@ -51,7 +51,7 @@ More examples:
 
 ### Build System
 
-Build systems are available on macOS to compile or run scripts. Use the default shortcut <kbd>⌘</kbd>+<kbd>B</kbd> to build or <kbd>Shift</kbd>+<kbd>⌘</kbd>+<kbd>B</kbd> to select the default build system.
+Build systems are available on Mac OS X to compile or run scripts. Use the default shortcut <kbd>⌘</kbd>+<kbd>B</kbd> to build or <kbd>Shift</kbd>+<kbd>⌘</kbd>+<kbd>B</kbd> to select the default build system.
 
 ## License
 
@@ -59,4 +59,4 @@ This work is licensed under the [The MIT License](LICENSE).
 
 ## Donate
 
-You are welcome support this project using [Flattr](https://flattr.com/submit/auto?user_id=idleberg&url=https://github.com/idleberg/sublime-applescript) or Bitcoin `17CXJuPsmhuTzFV2k4RKYwpEHVjskJktRd`
+You are welcome support this project using [Flattr](https://flattr.com/submit/auto?user_id=idleberg&url=https://github.com/idleberg/AppleScript-Sublime-Text) or Bitcoin `17CXJuPsmhuTzFV2k4RKYwpEHVjskJktRd`
