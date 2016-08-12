@@ -15,7 +15,7 @@ import subprocess
 
 # GLOBAL STUFF
 SYNTAX_FILE = 'Packages/AppleScript Extensions/AppleScript (Binary).sublime-syntax'
-END_REGEX = r'f\s?a\s?d\s?e\s?d\s?e\s?a\s?d\s?'
+END_REGEX = r'f\s?a\s?d\s?e\s?d\s?e\s?a\s?d\s?\Z'
 
 def is_syntax_set(view=None):
     if view is None:
