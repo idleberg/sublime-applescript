@@ -8,7 +8,7 @@ set theContent to "${5:(empty message)}"
  
 tell application "Mail"
         set theEmail to make new outgoing message with properties {subject:theSubject, content:theContent, visible:true}
- 
+
         tell theEmail
                 make new to recipient with properties {name:toName, address:toAddress}
                 send

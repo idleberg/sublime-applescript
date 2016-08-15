@@ -2,7 +2,7 @@
 	<content><![CDATA[
 --via http://superuser.com/questions/455920/how-can-i-launch-finder-in-a-specific-directory-from-automator-or-applescript
 tell application "Finder"
-	open POSIX file "${1:unix_path}"
+    open POSIX file "${1:unix_path}"
 end tell
 ]]></content>
 	<tabTrigger>Finder:Open location</tabTrigger>

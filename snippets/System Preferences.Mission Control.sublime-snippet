@@ -1,8 +1,8 @@
 <snippet>
 	<content><![CDATA[
 tell application "System Preferences"
-	activate
-	set the current pane to pane id "com.apple.preference.expose"
+    activate
+    set the current pane to pane id "com.apple.preference.expose"
 end tell
 ]]></content>
 	<tabTrigger>System Preferences:Mission Control</tabTrigger>

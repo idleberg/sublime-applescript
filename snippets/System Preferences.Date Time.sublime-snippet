@@ -1,8 +1,8 @@
 <snippet>
 	<content><![CDATA[
 tell application "System Preferences"
-	activate
-	set the current pane to pane id "com.apple.preference.datetime"
+    activate
+    set the current pane to pane id "com.apple.preference.datetime"
 end tell
 ]]></content>
 	<tabTrigger>System Preferences:Date Time</tabTrigger>
