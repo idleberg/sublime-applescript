@@ -30,7 +30,7 @@ def is_binary(view):
 class ScptBinaryCommand(EventListener):
     def on_load(self, view):
         if platform.system() != 'Darwin':
-            sublime.error_message("Binary files can only be decoded on macOS")
+            # sublime.error_message("Binary files can only be decoded on macOS")
             return
         # Check if binary, convert to plain-text, mark as "was binary"
         if is_binary(view):
