@@ -51,7 +51,7 @@ More examples:
 
 ### Build System
 
-Build systems are available on macOS to compile or run scripts. Use the default shortcut <kbd>⌘</kbd>+<kbd>B</kbd> to build or <kbd>Shift</kbd>+<kbd>⌘</kbd>+<kbd>B</kbd> to select the default build system.
+Build systems are available on macOS to compile or run scripts. Use the default shortcut <kbd>⌘</kbd>+<kbd>B</kbd> to build or <kbd>Shift</kbd>+<kbd>⌘</kbd>+<kbd>B</kbd> to select a build system variant.
 
 ## License
 
