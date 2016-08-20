@@ -23,22 +23,16 @@ def is_syntax_set(view=None):
     return 'AppleScript (Binary).sublime-syntax' in view.settings().get('syntax')
 
 def is_binary(view):
-    
     selection = view.substr(Region(0, view.size()))
     return (re.search(END_REGEX, selection))
 
 class ScptBinaryCommand(EventListener):
     def on_load(self, view):
-        if platform.system() != 'Darwin':
-            # sublime.error_message("Binary files can only be decoded on macOS")
-            return
         # Check if binary, convert to plain-text, mark as "was binary"
         if is_binary(view):
             view.run_command('binary_toggle')
         
     def on_post_save(self, view):
-        if platform.system() != 'Darwin':
-            return
         # Convert back to plain-text
         if view.get_status('is_binary'):
             view.run_command('binary_toggle', {'force_to': True})
@@ -59,8 +53,6 @@ class ScptBinaryCommand(EventListener):
         pass
 
     def on_modified(self, view):
-        if platform.system() != 'Darwin':
-            return
         freshly_written = view.settings().get('freshly_written')
         if freshly_written and is_binary(view):
             view.run_command('binary_toggle')
@@ -106,6 +98,10 @@ class BinaryToggleCommand(TextCommand):
                 raise e
 
     def run(self, edit, force_to=False):
+        if platform.system() != 'Darwin':
+            sublime.error_message("Binary AppleScript can only be opened or saved on macOS")
+            return
+
         if is_binary(self.view) and not force_to:
             self.decode_script(edit, self.view)
             if not is_syntax_set(self.view):
