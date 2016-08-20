@@ -1,11 +1,49 @@
 {
- "selector": "source.applescript",
- "working_dir": "${project_path:${folder}}",
- "cmd": ["/usr/bin/osacompile", "-o", "${file/\\.applescript/\\.scpt/}", "$file" ],
- "variants": [
+  "selector": "source.applescript",
+  "cmd": [
+    "echo",
+    "Error: This build system only works on macOS"
+  ],
+  "osx": {
+    "cmd": [
+      "/usr/bin/osacompile",
+      "-o",
+      "$file_base_name.scpt",
+      "$file"
+    ]
+  },
+  "variants": [
     {
-        "name": "Run the script",
-        "cmd": ["/usr/bin/osascript", "$file" ]
-    }
- ]
+      "name": "Script bundle",
+      "osx": {
+        "cmd": [
+          "/usr/bin/osacompile",
+          "-o",
+          "$file_base_name.scptd",
+          "$file"
+        ]
+      }
+    },
+    {
+      "name": "Application",
+      "osx": {
+        "cmd": [
+          "/usr/bin/osacompile",
+          "-o",
+          "$file_base_name.app",
+          "$file"
+        ]
+      }
+    },
+    {
+      "name": "Run",
+      "osx": {
+        
+        "cmd": [
+          "/usr/bin/osascript",
+          "$file"
+        ]
+      }
+    },
+  ]
 }
