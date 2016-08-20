@@ -99,7 +99,7 @@ class BinaryToggleCommand(TextCommand):
 
     def run(self, edit, force_to=False):
         if platform.system() != 'Darwin':
-            sublime.error_message("Binary AppleScript can only be opened or saved on macOS")
+            sublime.error_message("Binary AppleScript can only be edited on macOS")
             return
 
         if is_binary(self.view) and not force_to:
