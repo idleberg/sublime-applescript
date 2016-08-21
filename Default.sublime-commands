@@ -1,6 +1,6 @@
 [
-    {
-        "caption": "AppleScript: Toggle Binary",
-        "command": "binary_toggle"
-    }
+  {
+    "caption": "AppleScript: Toggle Binary",
+    "command": "binary_toggle"
+  }
 ]
