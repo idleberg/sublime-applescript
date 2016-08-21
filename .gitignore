@@ -1,4 +1,6 @@
+*.app
 *.applescript
 *.scpt
+*.scptd
 node_modules/
 npm-debug.log
