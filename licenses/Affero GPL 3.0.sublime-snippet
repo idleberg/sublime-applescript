@@ -18,6 +18,6 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 ]]></content>
-    <tabTrigger>comment:affero gpl3</tabTrigger>
+    <tabTrigger>license:affero gpl3</tabTrigger>
     <scope>source.applescript</scope>
 </snippet>
