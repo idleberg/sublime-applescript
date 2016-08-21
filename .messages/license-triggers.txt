@@ -2,4 +2,4 @@ v2.2.1
 ======
 
 Please take note that the triggers for all license snippets have changed from
-`comment-*` to `license-*`!
+`comment-*` to `license-*`
