@@ -10,4 +10,4 @@ Please help to improve this package and post issues on the GitHub repository:
     https://github.com/idleberg/sublime-applescript/issues
 
 Huge thanks to Tyrone Trevorrow, whose BinaryPlist package is the foundation
-for this package!
+for this feature!
