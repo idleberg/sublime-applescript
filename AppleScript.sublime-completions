@@ -18,7 +18,7 @@
     { "trigger": "buttons:1", "contents": "buttons {\"${1:button}\"} " },
     { "trigger": "buttons:2", "contents": "buttons {\"${1:button1}\",\"${2:button2}\"} " },
     { "trigger": "buttons:3", "contents": "buttons {\"${1:button1}\",\"${2:button2}\",\"${3:button3}\"} " },
-    { "trigger": "buttons:4", "contents": "buttons {\"${1:button1}\",\"${2:button2}\",\"${3:button3}\",\"${4:button3}\"} " },
+    { "trigger": "buttons:4", "contents": "buttons {\"${1:button1}\",\"${2:button2}\",\"${3:button3}\",\"${4:button4}\"} " },
     { "trigger": "cancel button name", "contents": "cancel button name \"${1:text}\"" },
     { "trigger": "cancel button", "contents": "cancel button \"${1:text}\"" },
     { "trigger": "choose application", "contents": "choose application" },
