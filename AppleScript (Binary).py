@@ -74,7 +74,7 @@ class BinaryToggleCommand(TextCommand):
             view.set_encoding('UTF-8')
             view.replace(edit, Region(0, view.size()), str(full_text.decode('utf-8')))
             view.end_edit(edit)
-            view.set_status('is_binary', 'Saving As Binary Property List')
+            view.set_status('is_binary', 'Decompiled File')
             view.set_scratch(True)
 
     def encode_script(self, view):
