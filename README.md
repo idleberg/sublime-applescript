@@ -53,7 +53,7 @@ More examples:
 
 Build systems are available on macOS to compile or run scripts. Use the default shortcut <kbd>⌘</kbd>+<kbd>B</kbd> to build or <kbd>Shift</kbd>+<kbd>⌘</kbd>+<kbd>B</kbd> to select a build system variant.
 
-**Note:** When editing binary AppleScripts decompiled by this package, you can simply save the file for it to be compiled.
+**Note:** When editing binary AppleScripts decompiled by this package, you can simply save the file for it to be re-compiled. Building it will lead to undesired results.
 
 ## License
 
