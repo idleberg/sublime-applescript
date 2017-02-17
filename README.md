@@ -19,7 +19,7 @@ This [Sublime Text](http://www.sublimetext.com/) package adds completions, snipp
 2. Choose “*Install Package*” from the Command Palette (<kbd>Super</kbd>+<kbd>Shift</kbd>+<kbd>p</kbd>)
 3. Select “*AppleScript Extensions*”” and press <kbd>Enter</kbd>
 
-### GitHub
+### Using Git
 
 1. Change to your Sublime Text `Packages` directory
 2. Clone repository `git clone https://github.com/idleberg/sublime-applescript.git 'AppleScript Extensions'`
@@ -52,6 +52,8 @@ More examples:
 ### Build System
 
 Build systems are available on macOS to compile or run scripts. Use the default shortcut <kbd>⌘</kbd>+<kbd>B</kbd> to build or <kbd>Shift</kbd>+<kbd>⌘</kbd>+<kbd>B</kbd> to select a build system variant.
+
+**Note:** When editing binary AppleScripts decompiled by this package, you can simply save the file for it to be compiled.
 
 ## License
 
