@@ -2,14 +2,14 @@
  * sublimetext-gulpfile.js
  * https://github.com/idleberg/sublimetext-gulpfile.js
  *
- * Copyright (c) 2014-2016 Jan T. Sott
+ * Copyright (c) 2014-2017 Jan T. Sott
  * Licensed under the MIT license.
  */
 
 // Dependencies
 var gulp = require('gulp'),
     debug = require('gulp-debug'),
-    jsonlint = require('gulp-json-lint');
+    jsonLint = require('gulp-jsonlint');
     ymlVal = require('gulp-yaml-validate');
     xmlVal = require('gulp-xml-validator');
 
@@ -42,12 +42,7 @@ var xmlFiles = [
     '**/*.tmPreferences',
     '**/*.tmSnippet',
     '**/*.tmTheme',
-    '**/*.xml',
-    '*.bbcolors',
-    '*.dvtcolortheme',
-    '*.icls',
-    '*.itermcolors',
-    '*.terminal'
+    '**/*.xml'
 ];
 
 var ymlFiles = [
@@ -64,7 +59,9 @@ gulp.task('lint', ['lint:json', 'lint:xml', 'lint:yml']);
 gulp.task('lint:json', function(){
   return gulp.src(jsonFiles)
     .pipe(debug({title: 'lint:json'}))
-    .pipe(jsonlint())
+    .pipe(jsonLint())
+    .pipe(jsonLint.failAfterError())
+    .pipe(jsonLint.reporter());
 });
 
 // Validate XML
