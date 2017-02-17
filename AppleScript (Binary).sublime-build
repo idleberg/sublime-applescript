@@ -1,14 +1,12 @@
 {
-  "selector": "source.applescript -source.applescript.binary",
+  "selector": "source.applescript.binary",
   "cmd": [
     "echo",
     "Error: This build system only works on macOS"
   ],
   "osx": {
     "cmd": [
-      "/usr/bin/osacompile",
-      "-o",
-      "$file_base_name.scpt",
+      "/usr/bin/osascript",
       "$file"
     ]
   },
@@ -31,15 +29,6 @@
           "/usr/bin/osacompile",
           "-o",
           "$file_base_name.app",
-          "$file"
-        ]
-      }
-    },
-    {
-      "name": "Run",
-      "osx": {
-        "cmd": [
-          "/usr/bin/osascript",
           "$file"
         ]
       }
