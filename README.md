@@ -37,7 +37,7 @@ Many commands can simply be triggered by completing a standard AppleScript comma
 
 ### Snippets
 
-There are several snippets included to generate license-texts enclosed in a comment. To trigger these, try the `comment` command with license names as parameter. You could, for example, use `comment:mit` to add an *MIT License* text, or `comment:gpl2` for the *GNU General Public License* in version 2.0. Press <kbd>Tab</kbd> to jump between input-fields.
+There are several snippets included to generate license-texts enclosed in a comment. To trigger these, try the `license` command with license names as parameter. You could, for example, use `license:mit` to add an *MIT License* text, or `license:gpl2` for the *GNU General Public License* in version 2.0. Press <kbd>Tab</kbd> to jump between input-fields.
 
 You can directly address several macOS applications to have them perform some action. For instance you can scaffold a script using `Mail:Send message`, telling Mail to send a message. You can use <kbd>Tab</kbd> to jump between recipient, subject and message fields. Other examples would be `System Preferences:Security` to open the according panel in System Preferences, or `iTunes:Open file` to play a piece of music in iTunes.
 
