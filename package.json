@@ -6,10 +6,10 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-debug": "^2.1.2",
     "gulp-jsonlint": "^1.1.2",
-    "gulp-xml-validator": "^0.1.1",
+    "gulp-xml-validator": "^0.2.0",
     "gulp-yaml-validate": "^1.0.2"
   },
   "scripts": {
