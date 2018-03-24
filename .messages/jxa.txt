@@ -1,0 +1,5 @@
+v2.4.0
+======
+
+This version adds language support and build-system for JavaScript for
+Automation (JXA).

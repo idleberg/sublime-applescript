@@ -1,4 +1,5 @@
 {
   "2.0.0": ".messages/binary.txt",
-  "2.2.1": ".messages/license-triggers.txt"
+  "2.2.1": ".messages/license-triggers.txt",
+  "2.4.0": ".messages/jxa.txt",
 }

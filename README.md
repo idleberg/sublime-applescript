@@ -5,7 +5,7 @@
 [![GitHub](https://img.shields.io/github/release/idleberg/sublime-applescript.svg?style=flat-square)](https://github.com/idleberg/sublime-applescript/releases)
 [![Travis](https://img.shields.io/travis/idleberg/sublime-applescript.svg?style=flat-square)](https://travis-ci.org/idleberg/sublime-applescript)
 
-This [Sublime Text](http://www.sublimetext.com/) package adds completions, snippets and build tools for [AppleScript](https://developer.apple.com/library/mac/documentation/applescript/conceptual/applescriptlangguide/introduction/ASLR_intro.html). As of version 2.0, this package also lets you edit binary script files.
+This [Sublime Text](http://www.sublimetext.com/) package adds completions, snippets and build tools for [AppleScript](https://developer.apple.com/library/mac/documentation/applescript/conceptual/applescriptlangguide/introduction/ASLR_intro.html) (including binary files) and JavaScript for Automation (JXA).
 
 ![Screenshot](https://raw.github.com/idleberg/sublime-applescript/master/screenshot.gif)
 
