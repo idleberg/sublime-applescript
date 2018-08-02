@@ -1,5 +1,5 @@
 {
-  "selector": "source.js.jxa",
+  "selector": "source.applescript -source.applescript.binary",
   "cmd": [
     "echo",
     "Error: This build system only works on macOS"
