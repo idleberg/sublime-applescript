@@ -7,8 +7,6 @@
   "osx": {
     "cmd": [
       "/usr/bin/osacompile",
-      "-l",
-      "JavaScript",
       "-o",
       "$file_base_name.scpt",
       "$file"
@@ -20,8 +18,6 @@
       "osx": {
         "cmd": [
           "/usr/bin/osacompile",
-          "-l",
-          "JavaScript",
           "-o",
           "$file_base_name.scptd",
           "$file"
@@ -33,8 +29,6 @@
       "osx": {
         "cmd": [
           "/usr/bin/osacompile",
-          "-l",
-          "JavaScript",
           "-o",
           "$file_base_name.app",
           "$file"
@@ -46,8 +40,6 @@
       "osx": {
         "cmd": [
           "/usr/bin/osascript",
-          "-l",
-          "JavaScript",
           "$file"
         ]
       }

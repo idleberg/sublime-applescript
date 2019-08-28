@@ -10,4 +10,4 @@ file_extensions:
 scope: source.js.jxa
 contexts:
   main:
-    - include: scope:source.js.jxa
+    - include: scope:source.js
