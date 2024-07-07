@@ -14,52 +14,64 @@ import platform
 import subprocess
 
 # GLOBAL STUFF
-saved_cursor_positions = []
-SYNTAX_FILE = 'Packages/AppleScript Extensions/AppleScript (Binary).sublime-syntax'
-END_REGEX = r'f\s?a\s?d\s?e\s?d\s?e\s?a\s?d\s?\Z'
+saved_cursor_data = []
+SYNTAX_FILE = "Packages/AppleScript Extensions/AppleScript (Binary).sublime-syntax"
+END_REGEX = r"f\s?a\s?d\s?e\s?d\s?e\s?a\s?d\s?\Z"
 
-class SaveCursorPositionsCommand(TextCommand):
+
+class SaveCursorPositionsCommand(sublime_plugin.TextCommand):
     def run(self, edit):
-        global saved_cursor_positions
+        global saved_cursor_data
 
-        # Get the list of cursor positions
-        saved_cursor_positions = [region.begin() for region in self.view.sel()]
+        selections = self.view.sel()
 
-class RestoreCursorPositionsCommand(TextCommand):
+        if any(region.size() > 0 for region in selections):
+            # Save selections
+            saved_cursor_data = [(region.a, region.b) for region in selections]
+        else:
+            # Save cursor positions
+            saved_cursor_data = [(region.a,) for region in selections]
+
+
+class RestoreCursorPositionsCommand(sublime_plugin.TextCommand):
     def run(self, edit):
-        global saved_cursor_positions
-        if saved_cursor_positions:
-            # Clear the current selections
+        global saved_cursor_data
+
+        if saved_cursor_data:
             self.view.sel().clear()
 
-            # Restore saved cursor positions
-            for pos in saved_cursor_positions:
-                self.view.sel().add(sublime.Region(pos))
+            for data in saved_cursor_data:
+                if len(data) == 2:
+                    # Restore selection
+                    self.view.sel().add(sublime.Region(data[0], data[1]))
+                else:
+                    # Restore cursor position
+                    self.view.sel().add(sublime.Region(data[0]))
 
-            # Optionally, scroll to the first cursor position
-            self.view.show(saved_cursor_positions[0])
 
 def is_syntax_set(view=None):
     if view is None:
         view = sublime.active_window().active_view()
-    return 'AppleScript (Binary).sublime-syntax' in view.settings().get('syntax')
+    return "AppleScript (Binary).sublime-syntax" in view.settings().get("syntax")
+
 
 def is_binary(view):
     selection = view.substr(Region(0, view.size()))
-    return (re.search(END_REGEX, selection))
+    return re.search(END_REGEX, selection)
+
 
 class ScptBinaryCommand(EventListener):
     def on_load(self, view):
         # Check if binary, convert to plain-text, mark as "was binary"
         if is_binary(view):
-            view.run_command('binary_toggle')
-        
+            view.run_command("binary_toggle")
+
     def on_post_save(self, view):
         # Convert back to plain-text
-        if view.get_status('is_binary'):
-            view.run_command('save_cursor_positions')
-            view.run_command('binary_toggle', {'force_to': True})
-            view.run_command('restore_cursor_positions')
+        if view.get_status("is_binary"):
+            view.run_command("save_cursor_positions")
+            view.run_command("binary_toggle", {"force_to": True})
+            view.run_command("restore_cursor_positions")
 
     def on_new(self, view):
         pass
@@ -77,33 +89,39 @@ class ScptBinaryCommand(EventListener):
         pass
 
     def on_modified(self, view):
-        freshly_written = view.settings().get('freshly_written')
+        freshly_written = view.settings().get("freshly_written")
         if freshly_written and is_binary(view):
 
-            view.run_command('save_cursor_positions')
-            view.run_command('binary_toggle')
-            view.run_command('restore_cursor_positions')
+            view.run_command("save_cursor_positions")
+            view.run_command("binary_toggle")
+            view.run_command("restore_cursor_positions")
 
-            view.settings().erase('freshly_written')
+            view.settings().erase("freshly_written")
 
     def on_activated(self, view):
         pass
+
 
 class BinaryToggleCommand(TextCommand):
     def decode_script(self, edit, view):
         """Reads in the view's file, converts it to plain and replaces the view's
         buffer with the plain-text."""
-        file_name = view.file_name()        
+        file_name = view.file_name()
 
-        if file_name and file_name != '' and os.path.isfile(file_name) == True and file_name.endswith('.scpt'):
-            cmd = ['osadecompile', file_name]
+        if (
+            file_name
+            and file_name != ""
+            and os.path.isfile(file_name) == True
+            and file_name.endswith(".scpt")
+        ):
+            cmd = ["osadecompile", file_name]
             p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             full_text, err = p.communicate()
 
-            view.set_encoding('UTF-8')
-            view.replace(edit, Region(0, view.size()), str(full_text.decode('utf-8')))
+            view.set_encoding("UTF-8")
+            view.replace(edit, Region(0, view.size()), str(full_text.decode("utf-8")))
             view.end_edit(edit)
-            view.set_status('is_binary', 'Decompiled File')
+            view.set_status("is_binary", "Decompiled File")
             view.set_scratch(True)
 
     def encode_script(self, view):
@@ -111,24 +129,26 @@ class BinaryToggleCommand(TextCommand):
         to the view's file."""
         file_name = view.file_name()
 
-        if file_name and file_name != '' and os.path.isfile(file_name) == True:
-            bytes = view.substr(Region(0, view.size())).encode('utf-8').rstrip()
+        if file_name and file_name != "" and os.path.isfile(file_name) == True:
+            bytes = view.substr(Region(0, view.size())).encode("utf-8").rstrip()
             try:
-                with open(file_name, 'wb') as f:
+                with open(file_name, "wb") as f:
                     f.write(bytes)
 
-                cmd = ['osacompile', '-o', file_name, file_name]
-                p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                cmd = ["osacompile", "-o", file_name, file_name]
+                p = subprocess.Popen(
+                    cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE
+                )
                 out, err = p.communicate()
 
-                view.settings().set('freshly_written', True)
+                view.settings().set("freshly_written", True)
                 view.sel().clear()
             except Exception as e:
                 sublime.error_message(str(e))
                 raise e
 
     def run(self, edit, force_to=False):
-        if platform.system() != 'Darwin':
+        if platform.system() != "Darwin":
             sublime.error_message("Binary AppleScript can only be edited on macOS")
             return
 
