@@ -1,8 +1,8 @@
 # AppleScript Extensions for Sublime Text
 
-[![The MIT License](https://flat.badgen.net/badge/license/MIT/orange)](http://opensource.org/licenses/MIT)
-[![Package Control](https://packagecontrol.herokuapp.com/downloads/AppleScript%20Extensions.svg?style=flat-square)](https://packagecontrol.io/packages/AppleScript%20Extensions)
-[![GitHub](https://flat.badgen.net/github/release/idleberg/sublime-applescript)](https://github.com/idleberg/sublime-applescript/releases)
+[![License](https://img.shields.io/github/license/idleberg/sublime-applescript?style=for-the-badge)](LICENSE)
+[![Package Control](https://img.shields.io/packagecontrol/dt/AppleScript%2520Extensions?style=for-the-badge)](https://packagecontrol.io/packages/AppleScript%20Extensions)
+[![Version](https://img.shields.io/github/v/release/idleberg/sublime-applescript?style=for-the-badge)](https://github.com/idleberg/sublime-applescript/releases)
 
 This [Sublime Text](http://www.sublimetext.com/) package adds completions, snippets and build tools for [AppleScript](https://developer.apple.com/library/mac/documentation/applescript/conceptual/applescriptlangguide/introduction/ASLR_intro.html) (including binary files) and JavaScript for Automation (JXA).
 
