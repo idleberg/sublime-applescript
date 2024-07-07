@@ -14,8 +14,30 @@ import platform
 import subprocess
 
 # GLOBAL STUFF
+saved_cursor_positions = []
 SYNTAX_FILE = 'Packages/AppleScript Extensions/AppleScript (Binary).sublime-syntax'
 END_REGEX = r'f\s?a\s?d\s?e\s?d\s?e\s?a\s?d\s?\Z'
+
+class SaveCursorPositionsCommand(TextCommand):
+    def run(self, edit):
+        global saved_cursor_positions
+
+        # Get the list of cursor positions
+        saved_cursor_positions = [region.begin() for region in self.view.sel()]
+
+class RestoreCursorPositionsCommand(TextCommand):
+    def run(self, edit):
+        global saved_cursor_positions
+        if saved_cursor_positions:
+            # Clear the current selections
+            self.view.sel().clear()
+
+            # Restore saved cursor positions
+            for pos in saved_cursor_positions:
+                self.view.sel().add(sublime.Region(pos))
+
+            # Optionally, scroll to the first cursor position
+            self.view.show(saved_cursor_positions[0])
 
 def is_syntax_set(view=None):
     if view is None:
@@ -35,7 +57,9 @@ class ScptBinaryCommand(EventListener):
     def on_post_save(self, view):
         # Convert back to plain-text
         if view.get_status('is_binary'):
+            view.run_command('save_cursor_positions')
             view.run_command('binary_toggle', {'force_to': True})
+            view.run_command('restore_cursor_positions')
 
     def on_new(self, view):
         pass
@@ -55,7 +79,11 @@ class ScptBinaryCommand(EventListener):
     def on_modified(self, view):
         freshly_written = view.settings().get('freshly_written')
         if freshly_written and is_binary(view):
+
+            view.run_command('save_cursor_positions')
             view.run_command('binary_toggle')
+            view.run_command('restore_cursor_positions')
+
             view.settings().erase('freshly_written')
 
     def on_activated(self, view):
@@ -71,6 +99,7 @@ class BinaryToggleCommand(TextCommand):
             cmd = ['osadecompile', file_name]
             p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             full_text, err = p.communicate()
+
             view.set_encoding('UTF-8')
             view.replace(edit, Region(0, view.size()), str(full_text.decode('utf-8')))
             view.end_edit(edit)
@@ -87,12 +116,13 @@ class BinaryToggleCommand(TextCommand):
             try:
                 with open(file_name, 'wb') as f:
                     f.write(bytes)
+
                 cmd = ['osacompile', '-o', file_name, file_name]
                 p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
                 out, err = p.communicate()
-                    
 
                 view.settings().set('freshly_written', True)
+                view.sel().clear()
             except Exception as e:
                 sublime.error_message(str(e))
                 raise e
