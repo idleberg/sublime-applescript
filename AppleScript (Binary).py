@@ -12,30 +12,33 @@ import os
 import re
 import platform
 import subprocess
+import tempfile
 
 # GLOBAL STUFF
-saved_cursor_data = []
 SYNTAX_FILE = "Packages/AppleScript Extensions/AppleScript (Binary).sublime-syntax"
 END_REGEX = r"f\s?a\s?d\s?e\s?d\s?e\s?a\s?d\s?\Z"
+SUBPROCESS_TIMEOUT = 30
 
 
 class SaveCursorPositionsCommand(sublime_plugin.TextCommand):
     def run(self, edit):
-        global saved_cursor_data
-
         selections = self.view.sel()
 
         if any(region.size() > 0 for region in selections):
             # Save selections
-            saved_cursor_data = [(region.a, region.b) for region in selections]
+            cursor_data = [(region.a, region.b) for region in selections]
         else:
             # Save cursor positions
-            saved_cursor_data = [(region.a,) for region in selections]
+            cursor_data = [(region.a,) for region in selections]
+
+        # Store in view-specific settings instead of global
+        self.view.settings().set('saved_cursor_data', cursor_data)
 
 
 class RestoreCursorPositionsCommand(sublime_plugin.TextCommand):
     def run(self, edit):
-        global saved_cursor_data
+        # Retrieve from view-specific settings
+        saved_cursor_data = self.view.settings().get('saved_cursor_data', [])
 
         if saved_cursor_data:
             self.view.sel().clear()
@@ -48,6 +51,9 @@ class RestoreCursorPositionsCommand(sublime_plugin.TextCommand):
                     # Restore cursor position
                     self.view.sel().add(sublime.Region(data[0]))
 
+            # Optional: clean up after restoring
+            self.view.settings().erase('saved_cursor_data')
+
 
 def is_syntax_set(view=None):
     if view is None:
@@ -56,39 +62,35 @@ def is_syntax_set(view=None):
 
 
 def is_binary(view):
-    selection = view.substr(Region(0, view.size()))
-    return re.search(END_REGEX, selection)
+    tail = view.substr(Region(max(0, view.size() - 30), view.size()))
+    return re.search(END_REGEX, tail)
+
+
+def _is_scpt(view):
+    file_name = view.file_name()
+    return file_name and file_name.endswith(".scpt")
 
 
 class ScptBinaryCommand(EventListener):
     def on_load(self, view):
+        if not _is_scpt(view):
+            return
         # Check if binary, convert to plain-text, mark as "was binary"
         if is_binary(view):
             view.run_command("binary_toggle")
 
     def on_post_save(self, view):
+        if not _is_scpt(view):
+            return
         # Convert back to plain-text
         if view.get_status("is_binary"):
             view.run_command("save_cursor_positions")
             view.run_command("binary_toggle", {"force_to": True})
             view.run_command("restore_cursor_positions")
 
-    def on_new(self, view):
-        pass
-
-    def on_clone(self, view):
-        pass
-
-    def on_pre_close(self, view):
-        pass
-
-    def on_close(self, view):
-        pass
-
-    def on_pre_save(self, view):
-        pass
-
     def on_modified(self, view):
+        if not _is_scpt(view):
+            return
         freshly_written = view.settings().get("freshly_written")
         if freshly_written and is_binary(view):
 
@@ -98,9 +100,6 @@ class ScptBinaryCommand(EventListener):
 
             view.settings().erase("freshly_written")
 
-    def on_activated(self, view):
-        pass
-
 
 class BinaryToggleCommand(TextCommand):
     def decode_script(self, edit, view):
@@ -108,19 +107,25 @@ class BinaryToggleCommand(TextCommand):
         buffer with the plain-text."""
         file_name = view.file_name()
 
-        if (
-            file_name
-            and file_name != ""
-            and os.path.isfile(file_name) == True
-            and file_name.endswith(".scpt")
-        ):
+        if file_name and os.path.isfile(file_name) and file_name.endswith(".scpt"):
             cmd = ["osadecompile", file_name]
             p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            full_text, err = p.communicate()
+            try:
+                full_text, err = p.communicate(timeout=SUBPROCESS_TIMEOUT)
+            except subprocess.TimeoutExpired:
+                p.kill()
+                p.communicate()
+                sublime.error_message("osadecompile timed out for: " + file_name)
+                return
+
+            if p.returncode != 0:
+                sublime.error_message(
+                    "osadecompile failed:\n" + err.decode("utf-8", errors="replace")
+                )
+                return
 
             view.set_encoding("UTF-8")
-            view.replace(edit, Region(0, view.size()), str(full_text.decode("utf-8")))
-            view.end_edit(edit)
+            view.replace(edit, Region(0, view.size()), full_text.decode("utf-8"))
             view.set_status("is_binary", "Decompiled File")
             view.set_scratch(True)
 
@@ -129,20 +134,41 @@ class BinaryToggleCommand(TextCommand):
         to the view's file."""
         file_name = view.file_name()
 
-        if file_name and file_name != "" and os.path.isfile(file_name) == True:
-            bytes = view.substr(Region(0, view.size())).encode("utf-8").rstrip()
+        if file_name and os.path.isfile(file_name):
+            content = view.substr(Region(0, view.size())).encode("utf-8").rstrip()
             try:
-                with open(file_name, "wb") as f:
-                    f.write(bytes)
+                # Write to a temp file to avoid corrupting the original on failure
+                tmp_fd, tmp_path = tempfile.mkstemp(suffix=".applescript")
+                try:
+                    with os.fdopen(tmp_fd, "wb") as f:
+                        f.write(content)
 
-                cmd = ["osacompile", "-o", file_name, file_name]
-                p = subprocess.Popen(
-                    cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE
-                )
-                out, err = p.communicate()
+                    cmd = ["osacompile", "-o", file_name, tmp_path]
+                    p = subprocess.Popen(
+                        cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE
+                    )
+                    try:
+                        out, err = p.communicate(timeout=SUBPROCESS_TIMEOUT)
+                    except subprocess.TimeoutExpired:
+                        p.kill()
+                        p.communicate()
+                        sublime.error_message(
+                            "osacompile timed out for: " + file_name
+                        )
+                        return
 
-                view.settings().set("freshly_written", True)
-                view.sel().clear()
+                    if p.returncode != 0:
+                        sublime.error_message(
+                            "osacompile failed:\n"
+                            + err.decode("utf-8", errors="replace")
+                        )
+                        return
+
+                    view.settings().set("freshly_written", True)
+                    view.sel().clear()
+                finally:
+                    if os.path.exists(tmp_path):
+                        os.unlink(tmp_path)
             except Exception as e:
                 sublime.error_message(str(e))
                 raise e
